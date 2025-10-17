@@ -1,0 +1,54 @@
+@startuml Ejercicio1
+
+class Cliente {
+    +idCliente
+    +nombre
+    +correo
+    +contraseña
+}
+
+class Peluquero {
+    +idPeluquero
+    +nombre
+}
+
+class Administrador {
+    +idAdmin
+    +nombre
+    +correo
+    +contraseña
+}
+class Cita {
+    +idCita
+    +estado: EstadoCita
+    +fecha
+    +hora
+}
+
+
+
+class Servicio {
+    +id_servicio
+    +nombre: TipoServicio
+    +duracion_min
+}
+
+enum EstadoCita {
+    Por_confirmar
+    Confirmada
+    Cumplida
+    No_cumplida
+}
+
+enum TipoServicio {
+    lavado
+    lavado_y_cortado
+    tinte
+}
+
+Cliente "1" -- "*" Cita
+Administrador "1" -- "*" Cita
+Cita "*" -- "1" Peluquero
+Cita "*" -- "*" Servicio
+
+@enduml

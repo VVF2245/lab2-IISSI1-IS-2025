@@ -1,0 +1,9 @@
+Cliente(!idCliente, nombre, correo, contraseña)
+Peluquero(!idPeluquero, nombre)
+Administrador(!idAdmin, nombre, correo, contraseña)
+Servicio(!idServicio, nombre, duracion_min)
+Cita(!idCita, estado, fecha, hora, estado, idCliente*, idPeluquero*, idAdmin*)
+estado -> dominio:{Por_confirmar, Confirmada, Cumplida, No_cumplida}
+FK Cliente(idCliente) FK Peluquero(idPeluquero) FK Administrador(idAdmin)
+Cita_Servicio(idCita*, idServicio*)
+FK Cita(idCita) FK Servicio(idServicio)
