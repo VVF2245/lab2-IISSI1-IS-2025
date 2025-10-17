@@ -46,6 +46,12 @@ enum TipoServicio {
     tinte
 }
 
+enum DuracionServicio {
+    30min
+    45min
+    2h
+}
+
 Cliente "1" -- "*" Cita
 Administrador "1" -- "*" Cita
 Cita "*" -- "1" Peluquero
